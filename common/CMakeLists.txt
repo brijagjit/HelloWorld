@@ -12,9 +12,11 @@ cmake_minimum_required(VERSION 3.16)
 # Source:
 #
 # hello.cpp
+# component.cpp
 
 add_library(hello_library
     hello.cpp
+    component.cpp
 )
 
 
