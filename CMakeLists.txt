@@ -33,15 +33,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory(common)
 
 
-# Add the Component 1 directory to the build.
+# Add the Components directory to the build.
 #
-# CMake will enter the component1 directory and process
+# CMake will enter the component directories and process
 # the CMakeLists.txt file located there.
 #
-# This makes the component1_library target available
+# This makes the componentX_library targets available
 # to the rest of the project.
 
 add_subdirectory(components/component1)
+add_subdirectory(components/component2)
+add_subdirectory(components/component3)
 
 
 # Create an executable target called "hello".
@@ -57,13 +59,15 @@ add_executable(hello
 
 # Link the hello executable with hello_library.
 #
-# This allows main.cpp to use functions implemented in hello_library.
+# This allows main.cpp to use functions implemented in libraries.
 #
 # PRIVATE means:
-# - hello uses hello_library
+# - hello uses hello_library and componentX_librar(ies)
 # - Other targets that use hello do not inherit this dependency
 #
 target_link_libraries(hello PRIVATE
     hello_library
     component1_library
+    component2_library
+    component3_library
 )
