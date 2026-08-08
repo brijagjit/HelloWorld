@@ -23,33 +23,14 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-
-# Create a library target called "hello_library".
+# Add the "common" directory to the build.
 #
-# A target is something CMake knows how to build.
-# This library contains the implementation of our hello functionality.
+# CMake will enter the common directory and process
+# the CMakeLists.txt file located there.
 #
-# Source:
-#     common/hello.cpp
-#
-add_library(hello_library
-    common/hello.cpp
-)
-
-
-# Specify where hello_library can find its header files.
-#
-# The PUBLIC keyword means:
-# - hello_library can include files from this directory
-# - Any target that links against hello_library also gets this include path
-#
-# Header location:
-#     common/hello.h
-#
-target_include_directories(hello_library PUBLIC
-    common
-)
-
+# This allows the hello_library target defined in
+# common/CMakeLists.txt to be used by this project.
+add_subdirectory(common)
 
 
 # Create an executable target called "hello".
