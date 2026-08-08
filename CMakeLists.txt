@@ -40,10 +40,7 @@ add_subdirectory(common)
 #
 # This makes the componentX_library targets available
 # to the rest of the project.
-
-add_subdirectory(components/component1)
-add_subdirectory(components/component2)
-add_subdirectory(components/component3)
+add_subdirectory(components)
 
 
 # Create an executable target called "hello".
