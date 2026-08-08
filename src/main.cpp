@@ -2,7 +2,7 @@
 
 int main()
 {
-   run_scheduler();
+    run_scheduler();
 
     return 0;
 }

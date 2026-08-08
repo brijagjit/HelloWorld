@@ -6,7 +6,10 @@
 
 void run_scheduler()
 {
-    run_component1();
-    run_component2();
-    run_component3();
+    while(1)
+    {
+        run_component1();
+        run_component2();
+        run_component3();
+    }
 }
