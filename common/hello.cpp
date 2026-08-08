@@ -1,7 +1,7 @@
 #include <iostream>
-#include <hello.h>
+#include "hello.h"
 
-void sayHello()
+void sayHello(Component component)
 {
-    std::cout << "Hello from library!" << std::endl;
+    std::cout << "Hello from " << componentName(component) << "!" << std::endl;
 }

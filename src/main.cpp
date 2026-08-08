@@ -5,7 +5,7 @@
 
 int main()
 {
-    sayHello();
+    sayHello(Component::SYSTEM);
     run_component1();
     run_component2();
     run_component3();
