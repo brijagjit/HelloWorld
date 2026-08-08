@@ -33,6 +33,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory(common)
 
 
+# Add the Component 1 directory to the build.
+#
+# CMake will enter the component1 directory and process
+# the CMakeLists.txt file located there.
+#
+# This makes the component1_library target available
+# to the rest of the project.
+
+add_subdirectory(components/component1)
+
+
 # Create an executable target called "hello".
 #
 # This executable contains the program entry point:
@@ -42,7 +53,6 @@ add_subdirectory(common)
 add_executable(hello
     src/main.cpp
 )
-
 
 
 # Link the hello executable with hello_library.
@@ -55,4 +65,5 @@ add_executable(hello
 #
 target_link_libraries(hello PRIVATE
     hello_library
+    component1_library
 )
