@@ -30,10 +30,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # This library contains the implementation of our hello functionality.
 #
 # Source:
-#     src/hello.cpp
+#     common/hello.cpp
 #
 add_library(hello_library
-    src/hello.cpp
+    common/hello.cpp
 )
 
 
@@ -44,10 +44,10 @@ add_library(hello_library
 # - Any target that links against hello_library also gets this include path
 #
 # Header location:
-#     include/hello.h
+#     common/hello.h
 #
 target_include_directories(hello_library PUBLIC
-    include
+    common
 )
 
 
