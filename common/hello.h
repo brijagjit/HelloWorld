@@ -1,3 +1,5 @@
 #pragma once
 
-void sayHello();
+#include "component.h"
+
+void sayHello(Component component);
