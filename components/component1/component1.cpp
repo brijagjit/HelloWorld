@@ -1,7 +1,9 @@
 #include <iostream>
 #include "component1.h"
+#include "hello.h"
 
 void run_component1()
 {
-    std::cout << "Hello from Component1!" << std::endl;
+    sayHello();
+    std::cout << "(called from Component1)" << std::endl;
 }
