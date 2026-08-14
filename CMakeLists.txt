@@ -43,15 +43,6 @@ add_subdirectory(common)
 add_subdirectory(components)
 
 
-# Add the scheduler directory to the build.
-#
-# CMake will enter the scheduler directory and process
-# the CMakeLists.txt file located there.
-#
-# This creates the scheduler_library target.
-add_subdirectory(scheduler)
-
-
 # Create an executable target called "hello".
 #
 # This executable contains the program entry point:
@@ -63,12 +54,12 @@ add_executable(hello
 )
 
 
-# Link the hello executable with the scheduler.
+# Link the hello executable with the component libraries.
 #
-# The scheduler is responsible for running the components.
-# Its dependencies on the component libraries are defined
-# in scheduler/CMakeLists.txt.
-
+# The executable runs each component in its own thread.
+#
 target_link_libraries(hello PRIVATE
-    scheduler_library
+    component1_library
+    component2_library
+    component3_library
 )
