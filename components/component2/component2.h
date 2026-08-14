@@ -1,3 +1,3 @@
 #pragma once
 
-void run_component2();
+void run_component2(int& counter);
