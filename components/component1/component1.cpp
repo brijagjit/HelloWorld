@@ -10,8 +10,11 @@ void run_component1(int& counter)
     while(true)
     {
         sayHello(Component::COMPONENT1);
-        counter++;
-        std::cout << "    Counter: " << counter << "\n";
+
+        int temp = counter;
+        std::this_thread::yield();
+        counter = temp + 1;
+        std::cout << "    Counter: " << counter << " - (from Component 1)\n";
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
